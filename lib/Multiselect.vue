@@ -1,5 +1,5 @@
 <template>
-  <div
+  <div dir="rtl"
     tabindex="0"
     :class="{ 'multiselect--active': isOpen, 'multiselect--disabled': disabled }"
     @focus="activate()"
@@ -207,7 +207,7 @@ fieldset[disabled] .multiselect {
 
 .multiselect__spinner {
   position: absolute;
-  right: 1px;
+  left: 1px;
   top: 1px;
   width: 48px;
   height: 35px;
@@ -220,8 +220,8 @@ fieldset[disabled] .multiselect {
   position: absolute;
   content: "";
   top: 50%;
-  left: 50%;
-  margin: -8px 0 0 -8px;
+  right: 50%;
+  margin: -8px -8px 0 0;
   width: 16px;
   height: 16px;
   border-radius: 100%;
@@ -264,7 +264,7 @@ fieldset[disabled] .multiselect {
   position: relative;
   width: 100%;
   min-height: 40px;
-  text-align: left;
+  text-align: right;
   color: #35495E;
 }
 
@@ -288,12 +288,12 @@ fieldset[disabled] .multiselect {
 .multiselect--active .multiselect__current,
 .multiselect--active .multiselect__input,
 .multiselect--active .multiselect__tags {
-  border-bottom-left-radius: 0;
   border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
 }
 
 .multiselect--active .multiselect__select {
-  transform: rotateZ(180deg);
+  transform: rotateZ(-180deg);
 }
 
 .multiselect__input,
@@ -305,7 +305,7 @@ fieldset[disabled] .multiselect {
   border: none;
   border-radius: 5px;
   background: #fff;
-  padding: 1px 0 0 5px;
+  padding: 1px 5px 0 0;
   width: calc(100%);
   transition: border 0.1s ease;
   box-sizing: border-box;
@@ -328,14 +328,14 @@ fieldset[disabled] .multiselect {
 }
 
 .multiselect__single {
-  padding-left: 6px;
+  padding-right: 6px;
   margin-bottom: 8px;
 }
 
 .multiselect__tags {
   min-height: 40px;
   display: block;
-  padding: 8px 40px 0 8px;
+  padding: 8px 8px 0 40px;
   border-radius: 5px;
   border: 1px solid #E8E8E8;
   background: #fff;
@@ -344,9 +344,9 @@ fieldset[disabled] .multiselect {
 .multiselect__tag {
   position: relative;
   display: inline-block;
-  padding: 4px 26px 4px 10px;
+  padding: 4px 10px 4px 26px;
   border-radius: 5px;
-  margin-right: 10px;
+  margin-left: 10px;
   color: #fff;
   line-height: 1;
   background: #41B883;
@@ -356,9 +356,9 @@ fieldset[disabled] .multiselect {
 
 .multiselect__tag-icon {
   cursor: pointer;
-  margin-left: 7px;
+  margin-right: 7px;
   position: absolute;
-  right: 0;
+  left: 0;
   top: 0;
   bottom: 0;
   font-weight: 700;
@@ -393,7 +393,7 @@ fieldset[disabled] .multiselect {
   display: block;
   overflow: hidden;
   padding: 8px 12px 0;
-  padding-right: 30px;
+  padding-left: 30px;
   white-space: nowrap;
   margin: 0;
   text-decoration: none;
@@ -409,7 +409,7 @@ fieldset[disabled] .multiselect {
   box-sizing: border-box;
   width: 40px;
   height: 38px;
-  right: 1px;
+  left: 1px;
   top: 1px;
   padding: 4px 8px;
   margin: 0;
@@ -421,7 +421,7 @@ fieldset[disabled] .multiselect {
 
 .multiselect__select:before {
   position: relative;
-  right: 0;
+  left: 0;
   top: 65%;
   color: #999;
   margin-top: 4px;
@@ -454,8 +454,8 @@ fieldset[disabled] .multiselect {
   margin: 0;
   border: 1px solid #E8E8E8;
   border-top: none;
-  border-bottom-left-radius: 5px;
   border-bottom-right-radius: 5px;
+  border-bottom-left-radius: 5px;
   z-index: 50;
 }
 
@@ -478,11 +478,11 @@ fieldset[disabled] .multiselect {
 
 .multiselect__option:after {
   top: 0;
-  right: 0;
+  left: 0;
   position: absolute;
   line-height: 40px;
-  padding-right: 12px;
-  padding-left: 20px;
+  padding-left: 12px;
+  padding-right: 20px;
 }
 
 .multiselect__option--highlight {
@@ -558,6 +558,6 @@ fieldset[disabled] .multiselect {
 
 @keyframes spinning {
   from { transform:rotate(0) }
-  to { transform:rotate(2turn) }
+  to { transform:rotate(-2turn) }
 }
 </style>
